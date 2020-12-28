@@ -1,5 +1,6 @@
 # robot -d results tests/takealot.robot
 *** Settings ***
+Library    SeleniumLibrary
 Documentation    This is some basic info about the whole suite
 Resource    ../Resources/TakealotUI.robot
 Resource    ../Resources/Common.robot
@@ -12,8 +13,14 @@ Test Teardown    Common.End Web Test
 User must sign in to check out
     [Documentation]    This is some basic info about the test
     [Tags]    Smoke
-    TakealotUI.Search for Products
-    TakealotUI.Select Product from Search Results
-    TakealotUI.Add Product to Cart
-    TakealotUI.Begin Checkout
+    Given user navigates to takealot
+    And user is not logged in
+    And user searches for products
+    And search results contains relevant products
+    And user selects a product from search results
+    And correct product page loads
+    And user adds the product to their cart
+    And the product is present in cart
+    When user attempts to checkout
+    Then the user is required to sign in
    

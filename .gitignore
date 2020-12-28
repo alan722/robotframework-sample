@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+src/robot-scripts/first-script/takealot/results/log.html
+src/robot-scripts/first-script/takealot/results/output.xml
+src/robot-scripts/first-script/takealot/results/report.html

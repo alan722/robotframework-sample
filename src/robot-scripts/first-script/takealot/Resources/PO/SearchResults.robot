@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Verify Search completed
-     Wait Until Page Contains    results for "ferrari"
+     Wait Until Page Contains    results for "${SEARCH_TERM}"
      Sleep    5s
 
 Click Product Link

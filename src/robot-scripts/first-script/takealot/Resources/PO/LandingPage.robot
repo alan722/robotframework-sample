@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Load
-    Go To    http://www.takealot.com
+    Go To    ${START_URL}
 
 Verify Page Loaded
      Wait Until Page Contains    Takealot.com

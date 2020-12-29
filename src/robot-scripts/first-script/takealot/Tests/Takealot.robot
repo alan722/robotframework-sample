@@ -1,4 +1,5 @@
 # robot -d results tests/takealot.robot
+# robot -d results -v BROWSER:chrome -v START_URL:http://takealot.com -v SEARCH_TERM:ferrari tests/takealot.robot
 *** Settings ***
 Library    SeleniumLibrary
 Documentation    This is some basic info about the whole suite
@@ -8,6 +9,10 @@ Test Setup    Common.Begin Web Test
 Test Teardown    Common.End Web Test
 
 *** Variables ***
+${BROWSER} =    chrome
+${START_URL} =    http://takealot.com
+${SEARCH_TERM} =    ferrari
+
 
 *** Test Cases ***
 User must sign in to check out

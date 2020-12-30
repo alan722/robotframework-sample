@@ -1,8 +1,7 @@
-# robot -d results/OS operating_system.robot
-# http://robotframework.org/robotframework/latest/libraries/OperatingSystem.html
+# robot -d results/xml xml.robot
+# http://robotframework.org/robotframework/latest/libraries/XML.html
 *** Settings ***
-Documentation    Sample usage of the operating system library keywords
-Resource    ./Resources/OS.robot
+Documentation    Sample usage of the xml library keywords
 
 *** Test Cases ***
 Create Some Directories

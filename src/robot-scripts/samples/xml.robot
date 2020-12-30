@@ -2,26 +2,28 @@
 # http://robotframework.org/robotframework/latest/libraries/XML.html
 *** Settings ***
 Documentation    Sample usage of the xml library keywords
+Resource    ./Resources/breakfastMenu.robot
 
 *** Test Cases ***
-Create Some Directories
-    [Tags]    OS
-    OS.Create the Base directory
-    OS.Create First Directory
-    OS.Create Second Directory
+Verify Menu Count
+    [Tags]    XML
+    breakfastMenu.Should be one menu in the file
 
-Create Some Files
-    [Tags]    OS
-    OS.Create First file
-    OS.Create Second File
-    OS.Create Third File
+Verify Root
+    [Tags]    XML
+    breakfastMenu.Verify Menu Name
 
-Move a File
-    [Tags]    OS
-    OS.Move Third File from Directory 2 to Directory 1
+Verify Food Count
+    [Tags]    XML
+    breakfastMenu.Verify Food Count
 
-Copy a File
-    [Tags]    OS
-    OS.Copy File 1 from Directory 1 to Directory 2
-    
+Verify First Food
+    [Tags]    XML
+    breakfastMenu.Verify First Food Name
+    breakfastMenu.Verify First Food Price
+    breakfastMenu.Verify First Food Calories
+
+Add a Food
+    [Tags]    XML
+    breakfastMenu.Add New Food
 

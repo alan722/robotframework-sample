@@ -7,5 +7,6 @@ Resource    ./Resources/jsonPlaceHolder.robot
 *** Test Cases ***
 Make a simple REST API GET call
     [Tags]    API
-    Get Json Response
+    ${response} =    Get Json Response
+    Log    ${response}
 

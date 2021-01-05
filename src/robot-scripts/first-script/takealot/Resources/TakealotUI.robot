@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    ../Libraries/MyCustomLibrary.py
 Resource    ../Resources/PO/LandingPage.robot
 Resource    ../Resources/PO/TopNav.robot
 Resource    ../Resources/PO/SearchResults.robot
@@ -8,6 +9,9 @@ Resource    ../Resources/PO/Cart.robot
 Resource    ../Resources/PO/SignIn.robot
 
 *** Keywords ***
+Call a Custom Keyword
+    Custom Keyword
+
 user navigates to takealot
     LandingPage.Load
     LandingPage.Verify Page Loaded
